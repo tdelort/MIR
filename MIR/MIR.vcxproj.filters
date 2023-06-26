@@ -29,6 +29,10 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="application.h" />
+    <ClInclude Include="Core\windowing_system.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Math\matrix3x4f.cpp">
@@ -44,5 +48,8 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="application.cpp" />
+    <ClCompile Include="Core\windowing_system.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

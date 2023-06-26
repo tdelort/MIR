@@ -1,7 +1,5 @@
 #pragma once
 
-#include <ostream>
-
 namespace mir
 {
 	class matrix3x4f

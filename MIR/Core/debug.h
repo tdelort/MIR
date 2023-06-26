@@ -2,10 +2,6 @@
 
 #include "core.h"
 
-#include <string>
-#include <string_view>
-#include <stdexcept>
-
 namespace mir
 {
 	class debug
@@ -17,15 +13,15 @@ namespace mir
 		};
 
 	public:
-		enum class LogLevel : uint8_t
+		enum class log_level : uint8_t
 		{
-			Debug,
-			Log,
-			Warn,
-			Error
+			debug,
+			log,
+			warn,
+			error
 		};
 		static void assert( bool _condition, std::string_view const _message, const char* _file, const char* _function, int _line );
-		static void print(LogLevel _level, std::string_view const _message, const char* _file, const char* _function, int _line );
+		static void print(log_level _level, std::string_view const _message, const char* _file, const char* _function, int _line );
 	};
 } // namespace mir
 
@@ -35,7 +31,7 @@ namespace mir
 
 #define MIR_ASSERT(_test, _msg) MIR_MAKE_STMT(debug::assert( (_test), (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
 
-#define MIR_LOG_ERROR(_msg) MIR_MAKE_STMT(debug::print(debug::LogLevel::Error, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__); MIR_BREAKPOINT;)
-#define MIR_LOG_WARNING(_msg) MIR_MAKE_STMT(debug::print(debug::LogLevel::Warn, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
-#define MIR_LOG_DEBUG(_msg) MIR_MAKE_STMT(debug::print(debug::LogLevel::Debug , (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
-#define MIR_LOG(_msg) MIR_MAKE_STMT(debug::print(debug::LogLevel::Log, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
+#define MIR_LOG_ERROR(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::error, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__); MIR_BREAKPOINT;)
+#define MIR_LOG_WARNING(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::warn, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
+#define MIR_LOG_DEBUG(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::debug , (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
+#define MIR_LOG(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::log, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)

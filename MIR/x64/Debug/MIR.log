@@ -1,0 +1,49 @@
+﻿  application.cpp
+  debug.cpp
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,15): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,15): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,126): error C2238: unexpected token(s) preceding ';'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.cpp(10,17): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.cpp(10,17): error C2589: '(': illegal token on right side of '::'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.cpp(10): error C2062: type 'unknown-type' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.cpp(10,17): error C2059: syntax error: ')'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.cpp(11,5): error C2143: syntax error: missing ';' before '{'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.cpp(11,5): error C2447: '{': missing function header (old-style formal list?)
+  matrix3x4f.cpp
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,15): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,15): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,126): error C2238: unexpected token(s) preceding ';'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\matrix3x4f.cpp(46,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\matrix3x4f.cpp(46,3): error C2589: '(': illegal token on right side of '::'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\matrix3x4f.cpp(46,3): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\matrix3x4f.cpp(46,3): error C2059: syntax error: ')'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\matrix3x4f.cpp(52,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\matrix3x4f.cpp(52,3): error C2589: '(': illegal token on right side of '::'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\matrix3x4f.cpp(52,3): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\matrix3x4f.cpp(52,3): error C2059: syntax error: ')'
+  quaternion.cpp
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,15): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,15): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,126): error C2238: unexpected token(s) preceding ';'
+  vector3f.cpp
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,15): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,15): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\debug.h(23,126): error C2238: unexpected token(s) preceding ';'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(67,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(67,3): error C2589: '(': illegal token on right side of '::'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(67,3): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(67,3): error C2059: syntax error: ')'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(73,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(73,3): error C2589: '(': illegal token on right side of '::'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(73,3): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(73,3): error C2059: syntax error: ')'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(165,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(165,3): error C2589: '(': illegal token on right side of '::'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(165,3): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(165,3): error C2059: syntax error: ')'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(190,3): warning C4002: too many arguments for function-like macro invocation 'assert'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(190,3): error C2589: '(': illegal token on right side of '::'
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(190,3): error C2062: type 'void' unexpected
+C:\Users\T-DELORT\Documents\Git Repos\MIR\MIR\Core\Math\vector3f.cpp(190,3): error C2059: syntax error: ')'
+  windowing_system.cpp
+  Generating Code...

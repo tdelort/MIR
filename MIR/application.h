@@ -2,8 +2,6 @@
 
 #include "Core/core.h"
 
-struct GLFWwindow;
-
 namespace mir
 {
 	class MIR_DLLEXPORT application
@@ -13,8 +11,6 @@ namespace mir
 		~application();
 
 		int run();
-	private:
-		GLFWwindow* m_window;
 	};
 }
 

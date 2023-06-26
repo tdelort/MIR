@@ -2,8 +2,6 @@
 
 #include "../debug.h"
 
-#include <ostream>
-
 namespace mir
 {
 	vector3f::vector3f()

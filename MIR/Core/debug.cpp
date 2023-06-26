@@ -1,8 +1,5 @@
 #include "debug.h"
 
-#include <string>
-#include <string_view>
-#include <iostream>
 
 namespace mir
 {
@@ -14,26 +11,26 @@ namespace mir
     {
         if(!_condition)
         {
-            print(LogLevel::Error, _message, _file, _function, _line);
+            print(log_level::error, _message, _file, _function, _line);
             throw assert_error(_message.data());
         }
     }
 
-	void debug::print(LogLevel _level, std::string_view const _message, const char* _file, const char* _function, int _line )
+	void debug::print(log_level _level, std::string_view const _message, const char* _file, const char* _function, int _line )
     {
-        std::ostream& os = _level == LogLevel::Error ? std::cerr : std::cout;
+        std::ostream& os = _level == log_level::error ? std::cerr : std::cout;
         
         // set the color of the text
         std::string prefix;
         switch(_level)
         {
-            case LogLevel::Debug:
+            case log_level::debug:
                 prefix = "\033[0;37m[DEBUG] ";
                 break;
-            case LogLevel::Warn:
+            case log_level::warn:
                 prefix = "\033[0;33m[WARN] ";
                 break;
-            case LogLevel::Error:
+            case log_level::error:
                 prefix = "\033[0;31m[ERROR] ";
                 break;
             default:
