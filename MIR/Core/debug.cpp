@@ -7,7 +7,7 @@ namespace mir
         : std::runtime_error("mir::utils::assert_error(" + _message + ")")
     { }
 
-    void debug::assert(bool _condition, std::string_view const _message, const char* _file, const char* _function, int _line )
+    void debug::assert_if(bool _condition, std::string_view const _message, const char* _file, const char* _function, int _line )
     {
         if(!_condition)
         {

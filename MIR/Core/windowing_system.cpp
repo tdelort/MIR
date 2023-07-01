@@ -9,6 +9,8 @@ void windowing_system::init()
 {
 	glfwInit();
 	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+	// TODO : handle resizable window
+	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 	m_window = glfwCreateWindow(default_window_width, default_window_height, "Vulkan window", nullptr, nullptr);
 }
 

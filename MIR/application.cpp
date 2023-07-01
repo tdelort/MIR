@@ -1,12 +1,15 @@
 #include "application.h"
 
 #include "Core/windowing_system.h"
+#include "Core/rendering_system.h"
 
 namespace mir
 {
 	application::application()
 	{
 		windowing_system::instance().init();
+
+		rendering_system::instance().init();
 
 		uint32_t extensionCount = 0;
 		vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
