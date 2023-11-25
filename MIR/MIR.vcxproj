@@ -95,22 +95,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="application.h" />
+    <ClInclude Include="Core\basic_allocator.h" />
     <ClInclude Include="Core\core.h" />
     <ClInclude Include="Core\debug.h" />
     <ClInclude Include="Core\Math\matrix3x4f.h" />
     <ClInclude Include="Core\Math\quaternion.h" />
     <ClInclude Include="Core\Math\vector3f.h" />
     <ClInclude Include="Core\rendering_system.h" />
+    <ClInclude Include="Core\render_device.h" />
     <ClInclude Include="Core\windowing_system.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp" />
+    <ClCompile Include="Core\basic_allocator.cpp" />
     <ClCompile Include="Core\debug.cpp" />
     <ClCompile Include="Core\Math\matrix3x4f.cpp" />
     <ClCompile Include="Core\Math\quaternion.cpp" />
     <ClCompile Include="Core\Math\vector3f.cpp" />
     <ClCompile Include="Core\rendering_system.cpp" />
+    <ClCompile Include="Core\render_device.cpp" />
     <ClCompile Include="Core\windowing_system.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

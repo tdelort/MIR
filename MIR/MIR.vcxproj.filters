@@ -36,6 +36,12 @@
     <ClInclude Include="Core\rendering_system.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Core\render_device.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\basic_allocator.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Math\matrix3x4f.cpp">
@@ -55,6 +61,12 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="Core\rendering_system.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\render_device.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\basic_allocator.cpp">
       <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>

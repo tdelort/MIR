@@ -33,5 +33,5 @@ namespace mir
 
 #define MIR_LOG_ERROR(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::error, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__); MIR_BREAKPOINT;)
 #define MIR_LOG_WARNING(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::warn, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
-#define MIR_LOG_DEBUG(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::debug , (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
 #define MIR_LOG(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::log, (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
+#define MIR_LOG_DEBUG(_msg) MIR_MAKE_STMT(debug::print(debug::log_level::debug , (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)

@@ -20,6 +20,8 @@ namespace mir
 
 	application::~application()
 	{
+		rendering_system::instance().cleanup();
+
 		windowing_system::instance().cleanup();
 	}
 
