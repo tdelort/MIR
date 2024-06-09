@@ -7,16 +7,16 @@ namespace mir
         : std::runtime_error("mir::utils::assert_error(" + _message + ")")
     { }
 
-    void debug::assert_if(bool _condition, std::string_view const _message, const char* _file, const char* _function, int _line )
+    void debug::assert_if(bool _condition, std::string_view const _message , const char* _file, const char* _function, int _line)
     {
         if(!_condition)
         {
-            print(log_level::error, _message, _file, _function, _line);
+            print(log_level::error, _message, _file, _function, _line );
             throw assert_error(_message.data());
         }
     }
 
-	void debug::print(log_level _level, std::string_view const _message, const char* _file, const char* _function, int _line )
+	void debug::print(log_level _level, std::string_view const _message , const char* _file, const char* _function, int _line)
     {
         std::ostream& os = _level == log_level::error ? std::cerr : std::cout;
         

@@ -1,12 +1,13 @@
 #pragma once
 
+#include "Core/render_device.h"
+
 #ifdef _DEBUG
 #define MIR_RENDER_USE_VALIDATION_LAYERS
 #endif
 
 namespace mir
 {
-
 	class rendering_system
 	{
 	private:
@@ -24,7 +25,7 @@ namespace mir
 			return instance;
 		}
 
-		void init();
+		void init( GLFWwindow* _window );
 		void cleanup();
 
 		VkInstance& get_vulkan_instance() { return m_instance; }
@@ -48,11 +49,10 @@ namespace mir
 		};
 #endif // MIR_RENDER_USE_VALIDATION_LAYERS
 		
-		void select_physical_device();
-		void create_logical_device();
-		void destroy_logical_device();
+		render_device m_device;
 
 		VkInstance m_instance;
+		VkSurfaceKHR m_surface;
 		VkDebugUtilsMessengerEXT m_debug_messenger;
 	};
 

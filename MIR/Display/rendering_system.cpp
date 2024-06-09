@@ -44,21 +44,27 @@ namespace mir
 
 	}
 
-	void rendering_system::init()
+	void rendering_system::init( GLFWwindow* _window )
 	{
 		create_instance();
 #if defined(MIR_RENDER_USE_VALIDATION_LAYERS)
 		create_debug_messenger();
 #endif // MIR_RENDER_USE_VALIDATION_LAYERS
-		render_device device = render_device_factory::create_render_device();
+		
+		// Only single window supported ?
+		VkResult res = glfwCreateWindowSurface(m_instance, _window, nullptr, &m_surface);
+		MIR_ASSERT(res == VK_SUCCESS, "failed to create window surface!");
+
+		m_device = render_device_factory::create_render_device( m_surface );
 	}
 
 	void rendering_system::cleanup()
 	{
-
+		render_device_factory::release_render_device(m_device);
 #if defined(MIR_RENDER_USE_VALIDATION_LAYERS)
 		destroy_debug_messenger();
 #endif // MIR_RENDER_USE_VALIDATION_LAYERS
+		vkDestroySurfaceKHR(m_instance, m_surface, nullptr);
 		destroy_instance();
 	}
 
@@ -189,10 +195,4 @@ namespace mir
 		destroy_debug_utils_messenger_ext(m_instance, m_debug_messenger, nullptr);
 	}
 #endif // MIR_RENDER_USE_VALIDATION_LAYERS
-
-
-	void rendering_system::destroy_logical_device()
-	{
-		vkDestroyDevice(m_logical_device, nullptr);
-	}
 }

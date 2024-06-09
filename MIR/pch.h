@@ -20,6 +20,8 @@
 #include <stdexcept>
 
 #include <vector>
+#include <set>
+#include <array>
 
 
 // My headers

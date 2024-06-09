@@ -11,15 +11,15 @@
     <Filter Include="Core\Math">
       <UniqueIdentifier>{8ae7146c-ff24-4bd3-aca2-f0ffc63c9e0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Display">
+      <UniqueIdentifier>{8fe78639-34f9-45fb-840d-6d494b78e8de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Math\matrix3x4f.h">
       <Filter>Core\Math</Filter>
     </ClInclude>
     <ClInclude Include="Core\Math\quaternion.h">
-      <Filter>Core\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\Math\vector3f.h">
       <Filter>Core\Math</Filter>
     </ClInclude>
     <ClInclude Include="Core\debug.h">
@@ -29,17 +29,62 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="application.h" />
-    <ClInclude Include="Core\windowing_system.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h" />
-    <ClInclude Include="Core\rendering_system.h">
-      <Filter>Core</Filter>
-    </ClInclude>
-    <ClInclude Include="Core\render_device.h">
-      <Filter>Core</Filter>
-    </ClInclude>
     <ClInclude Include="Core\basic_allocator.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\singleton.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec2.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec2_scalar.hpp">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec_operations_scalar.hpp">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec_scalar.hpp">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec_operations.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec3_scalar.hpp">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec3.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec4.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec4_scalar.hpp">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Math\vec_swizzle.h">
+      <Filter>Core\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\glfw_windowing_system.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\render_device.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\rendering_system.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\windowing_system.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\event_set.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\event_set.hpp">
       <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,27 +92,24 @@
     <ClCompile Include="Core\Math\matrix3x4f.cpp">
       <Filter>Core\Math</Filter>
     </ClCompile>
-    <ClCompile Include="Core\Math\quaternion.cpp">
-      <Filter>Core\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\Math\vector3f.cpp">
+    <ClCompile Include="Core\Math\quaternion.hpp">
       <Filter>Core\Math</Filter>
     </ClCompile>
     <ClCompile Include="Core\debug.cpp">
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="application.cpp" />
-    <ClCompile Include="Core\windowing_system.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\rendering_system.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Core\render_device.cpp">
-      <Filter>Core</Filter>
-    </ClCompile>
     <ClCompile Include="Core\basic_allocator.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\glfw_windowing_system.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\render_device.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\rendering_system.cpp">
+      <Filter>Display</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
