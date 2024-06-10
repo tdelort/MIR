@@ -98,8 +98,8 @@
     <ClInclude Include="Core\basic_allocator.h" />
     <ClInclude Include="Core\core.h" />
     <ClInclude Include="Core\debug.h" />
-    <ClInclude Include="Core\event_set.h" />
-    <ClInclude Include="Core\event_set.hpp" />
+    <ClInclude Include="Core\callback_set.h" />
+    <ClInclude Include="Core\callback_set.hpp" />
     <ClInclude Include="Core\Math\matrix3x4f.h" />
     <ClInclude Include="Core\Math\quaternion.h" />
     <ClInclude Include="Core\Math\vec.h" />
@@ -129,6 +129,7 @@
     <ClCompile Include="Display\glfw_windowing_system.cpp" />
     <ClCompile Include="Display\rendering_system.cpp" />
     <ClCompile Include="Display\render_device.cpp" />
+    <ClCompile Include="Display\windowing_system.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

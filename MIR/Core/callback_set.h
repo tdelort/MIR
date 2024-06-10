@@ -5,7 +5,7 @@
 namespace mir
 {
 	template<typename ...Args>
-	class event_set
+	class callback_set
 	{
 		using callback_type = std::function<void(Args...)>;
 	public:
@@ -15,7 +15,7 @@ namespace mir
 
 		void add(callback_type _callback);
 		bool remove(callback_type _callback);
-		void call();
+		void call( Args... _args );
 
 		void clear();
 
@@ -26,4 +26,4 @@ namespace mir
 	};
 }
 
-#include "event_set.hpp"
+#include "callback_set.hpp"

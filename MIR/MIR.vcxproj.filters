@@ -81,10 +81,10 @@
     <ClInclude Include="Display\windowing_system.h">
       <Filter>Display</Filter>
     </ClInclude>
-    <ClInclude Include="Core\event_set.h">
+    <ClInclude Include="Core\callback_set.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Core\event_set.hpp">
+    <ClInclude Include="Core\callback_set.hpp">
       <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
@@ -109,6 +109,9 @@
       <Filter>Display</Filter>
     </ClCompile>
     <ClCompile Include="Display\rendering_system.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\windowing_system.cpp">
       <Filter>Display</Filter>
     </ClCompile>
   </ItemGroup>

@@ -6,6 +6,8 @@ namespace mir
 	glfw_window::glfw_window(GLFWwindow* _api_handle)
 	{
 		m_api_handle = _api_handle;
+
+		glfwSetFramebufferSizeCallback( m_api_handle, on_glfw_window_resize_callback );
 	}
 
 	bool glfw_window::is_open()
@@ -18,6 +20,10 @@ namespace mir
 		glfwPollEvents();
 	}
 
+	void glfw_window::on_glfw_window_resize_callback( GLFWwindow* /*_window*/, int _w, int h)
+	{
+		m_on_resize( vec2u( _w, _h ) );
+	}
 
 
 	// window system

@@ -4,6 +4,7 @@
 
 namespace mir
 {
+	using vec4u = vec<unsigned int, 4u>;
 	using vec4i = vec<int, 4u>;
     using vec4f = vec<float, 4u>;
 

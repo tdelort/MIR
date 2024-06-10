@@ -8,17 +8,17 @@ namespace mir
 {
 	class glfw_window : window
 	{
-		event<void> m_on_resize;
-
 	public:
 		glfw_window(GLFWwindow* _api_handle);
 		~glfw_window();
 
-		virtual bool is_open();
+		virtual bool is_open() const;
 		virtual void poll_events();
 
 		GLFWwindow* get_api_handle();
 	private:
+		void on_glfw_window_resize_callback( GLFWwindow* _window, int _w, int h );
+		
 		GLFWwindow* m_api_handle;
 	};
 
@@ -34,6 +34,7 @@ namespace mir
 		static constexpr unsigned int s_default_window_height = 600;
 		
 	private:
+
 		std::vector<std::unique_ptr<glfw_window>> m_windows;
 	};
 

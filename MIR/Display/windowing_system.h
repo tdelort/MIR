@@ -9,10 +9,13 @@ namespace mir
 	public:
 		virtual ~window() = 0;
 
-		virtual bool is_open() = 0;
+		virtual bool is_open() const = 0;
 		virtual void poll_events() = 0;
-		virtual void is_open() = 0;
+		callback_set& get_on_resize_event();
 	private:
+
+		// on_resize_callback( _pixel_coords )
+		callback_set<vec2u> m_on_resize;
 	};
 
 	class windowing_system
