@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CORE_APPLICATION_H_INCLUDED
+#define CORE_APPLICATION_H_INCLUDED
 
 #include "Core/core.h"
 
@@ -14,3 +15,4 @@ namespace mir
 	};
 }
 
+#endif // !CORE_APPLICATION_H_INCLUDED

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CORE_DEBUG_H_INCLUDED
+#define CORE_DEBUG_H_INCLUDED
 
 #include "core.h"
 
@@ -44,3 +45,4 @@ namespace mir
 #define MIR_LOG(_msg) MIR_LOG_INTERNAL(debug::log_level::log, _msg );
 #define MIR_LOG_DEBUG(_msg) MIR_LOG_INTERNAL(debug::log_level::debug, _msg );
 
+#endif // CORE_DEBUG_H_INCLUDED

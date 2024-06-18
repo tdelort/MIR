@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef CORE_MATH_VEC_SWIZZLE_H_INCLUDED
+#define CORE_MATH_VEC_SWIZZLE_H_INCLUDED
 
 #define MIR_VEC_DEFINE_GETTER( _name, _i0 )						\
 	[[nodiscard]] TYPE _name() const { return m_data[_i0]; }    \
@@ -143,4 +144,5 @@ MIR_VEC_DEFINE_GETTER_3( zzyz, 2, 2, 1, 2 )	\
 MIR_VEC_DEFINE_GETTER_3( zzzx, 2, 2, 2, 0 )	\
 MIR_VEC_DEFINE_GETTER_3( zzzy, 2, 2, 2, 1 )	\
 MIR_VEC_DEFINE_GETTER_3( zzzz, 2, 2, 2, 2 )	\
-#include "vec_scalar.hpp"
+
+#endif // CORE_MATH_VEC_SWIZZLE_H_INCLUDED

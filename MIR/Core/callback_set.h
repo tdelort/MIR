@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CORE_CALLBACK_SET_H_INCLUDED
+#define CORE_CALLBACK_SET_H_INCLUDED
 
 #include <functional>
 
@@ -11,7 +12,7 @@ namespace mir
 	public:
 		void operator+=(callback_type _callback);
 		void operator-=(callback_type _callback);
-		void operator()();
+		void operator()( Args... _args);
 
 		void add(callback_type _callback);
 		bool remove(callback_type _callback);
@@ -19,7 +20,7 @@ namespace mir
 
 		void clear();
 
-		size_t size();
+		size_t size() const;
 
 	private:
 		std::vector<callback_type> m_callbacks;
@@ -27,3 +28,5 @@ namespace mir
 }
 
 #include "callback_set.hpp"
+
+#endif // CORE_CALLBACK_SET_H_INCLUDED

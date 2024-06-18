@@ -1,6 +1,9 @@
 #pragma once
+#ifndef _QUAT_INC_
+#define _QUAT_INC_
 
 #include "vec.h"
+#include "vec3.h"
 #include "vec4.h"
 
 namespace mir
@@ -28,4 +31,4 @@ namespace mir
 }
 
 #include "quaternion.hpp"
-
+#endif // _QUAT_INC_

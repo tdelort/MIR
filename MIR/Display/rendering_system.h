@@ -1,6 +1,7 @@
-#pragma once
+#ifndef DISPLAY_RENDERING_SYSTEM_H_INCLUDED
+#define DISPLAY_RENDERING_SYSTEM_H_INCLUDED
 
-#include "Core/render_device.h"
+#include <Display/render_device.h>
 
 #ifdef _DEBUG
 #define MIR_RENDER_USE_VALIDATION_LAYERS
@@ -57,3 +58,5 @@ namespace mir
 	};
 
 }
+
+#endif // DISPLAY_RENDERING_SYSTEM_H_INCLUDED

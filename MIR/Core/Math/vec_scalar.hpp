@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿#ifndef CORE_MATH_VEC_SCALAR_HPP_INCLUDED
+#define CORE_MATH_VEC_SCALAR_HPP_INCLUDED
+
 
 #include "vec.h"
 
@@ -37,3 +39,5 @@ namespace mir
 		return m_data[_index];
 	}
 }
+
+#endif // CORE_MATH_VEC_SCALAR_HPP_INCLUDED

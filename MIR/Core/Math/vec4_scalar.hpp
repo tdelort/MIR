@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿#ifndef CORE_MATH_VEC4_SCALAR_HPP_INCLUDED
+#define CORE_MATH_VEC4_SCALAR_HPP_INCLUDED
+
 
 #include "vec.h"
 #include "vec4.h"
@@ -25,7 +27,7 @@ namespace mir
 
     template<typename TYPE>
 	vec<TYPE, 4u>::vec( const vec<TYPE, 3u>& _v0, TYPE _e1 )
-		: type{ _v0[0], _v0[1], _v0[2], _e2 }
+		: type{ _v0[0], _v0[1], _v0[2], _e1 }
 	{
 	}
 
@@ -33,7 +35,7 @@ namespace mir
     template<typename TYPE>
 	template<typename E0, typename E1, typename E2, typename E3>
 	vec<TYPE, 4u>::vec( E0 _e0, E1 _e1, E2 _e2, E3 _e3)
-		: type{ static_cast<TYPE>(_e0), static_cast<TYPE>(_e1), static_cast<TYPE>(_e2), static_cast(TYPE)(_e3) }
+		: type{ static_cast<TYPE>(_e0), static_cast<TYPE>(_e1), static_cast<TYPE>(_e2), static_cast<TYPE>(_e3) }
 	{
 	}
 
@@ -73,7 +75,7 @@ namespace mir
 
     template<typename TYPE>
 	template<typename E0>
-	[[nodiscard]] vec<TYPE, 4u>& vec<TYPE, 4u>::operator+=(const vec<E0, 4u> const& _other)
+	[[nodiscard]] vec<TYPE, 4u>& vec<TYPE, 4u>::operator+=(const vec<E0, 4u>& _other)
 	{
 		m_data[0] += static_cast<TYPE>(_other.m_data[0]);
 		m_data[1] += static_cast<TYPE>(_other.m_data[1]);
@@ -95,7 +97,7 @@ namespace mir
 
     template<typename TYPE>
 	template<typename E0>
-	[[nodiscard]] vec<TYPE, 4u>& vec<TYPE, 4u>::operator-=(const vec<E0, 4u> const& _other)
+	[[nodiscard]] vec<TYPE, 4u>& vec<TYPE, 4u>::operator-=(const vec<E0, 4u>& _other)
 	{
 		m_data[0] -= static_cast<TYPE>(_other.m_data[0]);
 		m_data[1] -= static_cast<TYPE>(_other.m_data[1]);
@@ -148,3 +150,5 @@ namespace mir
 	}
 
 } // namespace mir
+
+#endif // CORE_MATH_VEC4_SCALAR_HPP_INCLUDED

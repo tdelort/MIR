@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CORE_PCH_H_INCLUDED
+#define CORE_PCH_H_INCLUDED
 
 // GLFW Headers
 #define GLFW_INCLUDE_VULKAN
@@ -27,3 +28,4 @@
 // My headers
 #include "Core/debug.h"
 
+#endif // CORE_PCH_H_INCLUDED

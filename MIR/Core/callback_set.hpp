@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CORE_CALLBACK_SET_HPP_INCLUDED
+#define CORE_CALLBACK_SET_HPP_INCLUDED
 
 #include "callback_set.h"
 
@@ -19,9 +20,9 @@ namespace mir
 	}
 
 	template<typename ...Args>
-	void callback_set<Args...>::operator()()
+	void callback_set<Args...>::operator()( Args... _args )
 	{
-		call();
+		call( _args );
 	}
 
 	template<typename ...Args>
@@ -37,13 +38,12 @@ namespace mir
 	}
 
 	template<typename ...Args>
-	bool callback_set<Args...>::call( Args... _args )
+	void callback_set<Args...>::call( Args... _args )
 	{
 		for( callback_type& callback : m_callbacks )
 		{
 			callback( _args );
 		}
-		clear();
 	}
 
 	template<typename ...Args>
@@ -53,8 +53,9 @@ namespace mir
 	}
 
 	template<typename ...Args>
-	size_t callback_set<Args...>::size()
+	size_t callback_set<Args...>::size() const
 	{
 		return m_callbacks.size();
 	}
 }
+#endif // CORE_CALLBACK_SET_HPP_INCLUDED

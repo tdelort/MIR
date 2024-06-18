@@ -14,6 +14,12 @@
     <Filter Include="Display">
       <UniqueIdentifier>{8fe78639-34f9-45fb-840d-6d494b78e8de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Display\DX12">
+      <UniqueIdentifier>{7ca138b4-c0d9-41cf-b521-162f27d5b8b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Display\glfw">
+      <UniqueIdentifier>{740ee8bb-59b9-4279-ac44-a9fc72b30879}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Math\matrix3x4f.h">
@@ -69,9 +75,6 @@
     <ClInclude Include="Core\Math\vec_swizzle.h">
       <Filter>Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Display\glfw_windowing_system.h">
-      <Filter>Display</Filter>
-    </ClInclude>
     <ClInclude Include="Display\render_device.h">
       <Filter>Display</Filter>
     </ClInclude>
@@ -86,6 +89,15 @@
     </ClInclude>
     <ClInclude Include="Core\callback_set.hpp">
       <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\DX12\dx12_pch.h">
+      <Filter>Display\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\glfw\glfw_windowing_system.h">
+      <Filter>Display\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\DX12\dx12_render_device.h">
+      <Filter>Display\DX12</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -102,9 +114,6 @@
     <ClCompile Include="Core\basic_allocator.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Display\glfw_windowing_system.cpp">
-      <Filter>Display</Filter>
-    </ClCompile>
     <ClCompile Include="Display\render_device.cpp">
       <Filter>Display</Filter>
     </ClCompile>
@@ -113,6 +122,12 @@
     </ClCompile>
     <ClCompile Include="Display\windowing_system.cpp">
       <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\glfw\glfw_windowing_system.cpp">
+      <Filter>Display\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\DX12\dx12_render_device.cpp">
+      <Filter>Display\DX12</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

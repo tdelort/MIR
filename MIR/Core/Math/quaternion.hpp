@@ -1,4 +1,6 @@
-#pragma once
+
+#ifndef CORE_MATH_QUATERNION_HPP_INCLUDED
+#define CORE_MATH_QUATERNION_HPP_INCLUDED
 
 #include "quaternion.h"
 #include "vec.h"
@@ -65,3 +67,5 @@ namespace mir
 		return quaternion( *this ) *= _rhs;
 	}
 } // namespace mir
+
+#endif // CORE_MATH_QUATERNION_HPP_INCLUDED

@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef CORE_MATH_VEC2_SCALAR_HPP_INCLUDED
+#define CORE_MATH_VEC2_SCALAR_HPP_INCLUDED
 
 #include "vec.h"
 #include "vec2.h"
@@ -43,7 +44,7 @@ namespace mir
 
     template<typename TYPE>
 	template<typename E0>
-	[[nodiscard]] vec<TYPE, 2u>& vec<TYPE, 2u>::operator+=(const vec<E0, 2u> const& _other)
+	[[nodiscard]] vec<TYPE, 2u>& vec<TYPE, 2u>::operator+=(const vec<E0, 2u>& _other)
 	{
 		m_data[0] += static_cast<TYPE>(_other.m_data[0]);
 		m_data[1] += static_cast<TYPE>(_other.m_data[1]);
@@ -61,7 +62,7 @@ namespace mir
 
     template<typename TYPE>
 	template<typename E0>
-	[[nodiscard]] vec<TYPE, 2u>& vec<TYPE, 2u>::operator-=(const vec<E0, 2u> const& _other)
+	[[nodiscard]] vec<TYPE, 2u>& vec<TYPE, 2u>::operator-=(const vec<E0, 2u>& _other)
 	{
 		m_data[0] -= static_cast<TYPE>(_other.m_data[0]);
 		m_data[1] -= static_cast<TYPE>(_other.m_data[1]);
@@ -113,3 +114,5 @@ namespace mir
 	}
 
 } // namespace mir
+
+#endif // CORE_MATH_VEC2_SCALAR_HPP_INCLUDED

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef CORE_BASIC_ALLOCATOR_H_INCLUDED
+#define CORE_BASIC_ALLOCATOR_H_INCLUDED
 
 #define MIR_LOG_ALLOCS
 
@@ -43,3 +45,5 @@ namespace mir
 		}
 	};
 }
+
+#endif // CORE_BASIC_ALLOCATOR_H_INCLUDED

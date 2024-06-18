@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef CORE_MATH_VEC_OPERATIONS_HPP_INCLUDED
+#define CORE_MATH_VEC_OPERATIONS_HPP_INCLUDED
 
 #include "vec.h"
 
@@ -39,7 +40,7 @@ namespace mir
 	vec<TYPE, ELEM_COUNT> normalize(const vec<TYPE, ELEM_COUNT>& _v)
 	{
 		const float len = length(_v);
-		return _v / len
+		return _v / len;
 	}
 
 	template<typename TYPE, size_t ELEM_COUNT>
@@ -51,3 +52,5 @@ namespace mir
 		return _v / len;
 	}
 }
+
+#endif // CORE_MATH_VEC_OPERATIONS_HPP_INCLUDED

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DISPLAY_RENDER_DEVICE_H_INCLUDED
+#define DISPLAY_RENDER_DEVICE_H_INCLUDED
 
 // TODO : make abstract and create : vk_render_device / dx12_render_device
 
@@ -25,3 +26,5 @@ namespace mir
 		static void release_render_device( render_device& _device );
 	};
 }
+
+#endif // DISPLAY_RENDER_DEVICE_H_INCLUDED

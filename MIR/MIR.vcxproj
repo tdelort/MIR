@@ -114,7 +114,9 @@
     <ClInclude Include="Core\Math\vec_operations_scalar.hpp" />
     <ClInclude Include="Core\Math\vec_swizzle.h" />
     <ClInclude Include="Core\singleton.h" />
-    <ClInclude Include="Display\glfw_windowing_system.h" />
+    <ClInclude Include="Display\DX12\dx12_pch.h" />
+    <ClInclude Include="Display\DX12\dx12_render_device.h" />
+    <ClInclude Include="Display\glfw\glfw_windowing_system.h" />
     <ClInclude Include="Display\rendering_system.h" />
     <ClInclude Include="Display\render_device.h" />
     <ClInclude Include="Display\windowing_system.h" />
@@ -126,7 +128,8 @@
     <ClCompile Include="Core\debug.cpp" />
     <ClCompile Include="Core\Math\matrix3x4f.cpp" />
     <ClCompile Include="Core\Math\quaternion.hpp" />
-    <ClCompile Include="Display\glfw_windowing_system.cpp" />
+    <ClCompile Include="Display\DX12\dx12_render_device.cpp" />
+    <ClCompile Include="Display\glfw\glfw_windowing_system.cpp" />
     <ClCompile Include="Display\rendering_system.cpp" />
     <ClCompile Include="Display\render_device.cpp" />
     <ClCompile Include="Display\windowing_system.cpp" />

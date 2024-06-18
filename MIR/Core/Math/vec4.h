@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef CORE_MATH_VEC4_H_INCLUDED
+#define CORE_MATH_VEC4_H_INCLUDED
 
 #include "vec.h"
 
@@ -53,12 +54,12 @@ namespace mir
         template<typename E0>
 		[[nodiscard]] vec<TYPE, 4u>& operator+=(E0 _other);
 		template<typename E0>
-		[[nodiscard]] vec<TYPE, 4u>& operator+=(const vec<E0, 4u> const& _other);
+		[[nodiscard]] vec<TYPE, 4u>& operator+=(const vec<E0, 4u>& _other);
 
         template<typename E0>
 		[[nodiscard]] vec<TYPE, 4u>& operator-=(E0 _other);
 		template<typename E0>
-		[[nodiscard]] vec<TYPE, 4u>& operator-=(const vec<E0, 4u> const& _other);
+		[[nodiscard]] vec<TYPE, 4u>& operator-=(const vec<E0, 4u>& _other);
     };
 
     template<typename TYPE>
@@ -87,3 +88,5 @@ namespace mir
 }
 
 #include "vec4_scalar.hpp"
+
+#endif // CORE_MATH_VEC4_H_INCLUDED

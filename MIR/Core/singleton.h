@@ -1,8 +1,7 @@
-#pragma once
 
 namespace mir
 {
-	template<typename DERIVED>
+	/* Just for ref, don't use it
 	class singleton
 	{
 		singleton();
@@ -14,9 +13,9 @@ namespace mir
 
 		static auto& instance()
 		{
-			static T instance;
+			static singleton instance;
 			return instance;
 		}
 	};
-
+	*/
 }

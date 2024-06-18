@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef CORE_MATH_VEC_H_INCLUDED
+#define CORE_MATH_VEC_H_INCLUDED
 
 namespace mir
 {
@@ -16,6 +17,7 @@ namespace mir
     public:
 
         vec();
+        ~vec();
         vec( TYPE _e );
 
         template<typename TYPE_OTHER>
@@ -28,3 +30,5 @@ namespace mir
 }
 
 #include "vec_scalar.hpp"
+
+#endif // CORE_MATH_VEC_H_INCLUDED

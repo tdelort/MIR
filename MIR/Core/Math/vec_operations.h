@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿#ifndef CORE_MATH_VEC_OPERATIONS_H_INCLUDED
+#define CORE_MATH_VEC_OPERATIONS_H_INCLUDED
 
 #include "vec.h"
 
@@ -25,3 +26,5 @@ namespace mir
 }
 
 #include "vec_operations_scalar.hpp"
+
+#endif // CORE_MATH_VEC_OPERATIONS_H_INCLUDED
