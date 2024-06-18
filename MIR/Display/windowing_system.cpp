@@ -10,29 +10,29 @@
 
 namespace mir
 {
-	window::on_resize_callback_set_type& window::get_on_resize_event()
+	windowing_system::windowing_system()
+		: m_impl{}
+	{ }
+
+	windowing_system::~windowing_system()
+	{ }
+
+	window& windowing_system::create_window( vec2u _dims )
 	{
-		return m_on_resize;
+		return m_impl->create_window( _dims );
 	}
 
-	void window_factory::s_initialize_window_system()
+	window& windowing_system::get_window( size_t _index );
 	{
-#if defined( MIR_WINDOW_USE_GLFW )
-		s_glfw_initialize_window_system();
-#endif // defined( MIR_WINDOW_USE_GLFW )
+		return m_impl->get_window( _index );
+	}
+	size_t windowing_system::get_window_count();
+	{
+		return m_impl->get_window_count();
 	}
 
-	window* window_factory::s_create_window( vec2u _dims )
+	void windowing_system::destroy_window( size_t _index );
 	{
-#if defined( MIR_WINDOW_USE_GLFW )
-		return s_glfw_create_window( _dims);
-#endif // defined( MIR_WINDOW_USE_GLFW )
-	}
-
-	void window_factory::s_terminate_window_system()
-	{
-#if defined( MIR_WINDOW_USE_GLFW )
-		s_glfw_terminate_window_system();
-#endif // defined( MIR_WINDOW_USE_GLFW )
+		m_impl->destroy_window( _index );
 	}
 }

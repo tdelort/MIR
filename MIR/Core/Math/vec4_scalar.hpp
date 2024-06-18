@@ -59,8 +59,20 @@ namespace mir
 		: type{ _v0[0], _v0[1], _v0[2], _e1 }
 	{
 	}
-	
 
+    template<typename TYPE>
+	[[nodiscard]] TYPE vec<TYPE, 4u>::operator[]( size_t _index ) const
+	{
+		// TODO : Debug assert
+		return m_data[_index];
+	}
+
+    template<typename TYPE>
+	TYPE& vec<TYPE, 4u>::operator[]( size_t _index )
+	{
+		// TODO : Debug assert
+		return m_data[_index];
+	}
 
 	template<typename TYPE>
 	template<typename E0>

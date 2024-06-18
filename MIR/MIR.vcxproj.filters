@@ -99,6 +99,12 @@
     <ClInclude Include="Display\DX12\dx12_render_device.h">
       <Filter>Display\DX12</Filter>
     </ClInclude>
+    <ClInclude Include="Display\window.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\glfw\glfw_window.h">
+      <Filter>Display\glfw</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Math\matrix3x4f.cpp">
@@ -128,6 +134,12 @@
     </ClCompile>
     <ClCompile Include="Display\DX12\dx12_render_device.cpp">
       <Filter>Display\DX12</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\window.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\glfw\glfw_window.cpp">
+      <Filter>Display\glfw</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

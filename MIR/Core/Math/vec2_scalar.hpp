@@ -34,6 +34,20 @@ namespace mir
 	}
 
     template<typename TYPE>
+	[[nodiscard]] TYPE vec<TYPE, 2u>::operator[]( size_t _index ) const
+	{
+		// TODO : Debug assert
+		return m_data[_index];
+	}
+
+    template<typename TYPE>
+	TYPE& vec<TYPE, 2u>::operator[]( size_t _index )
+	{
+		// TODO : Debug assert
+		return m_data[_index];
+	}
+
+    template<typename TYPE>
 	template<typename E0>
 	[[nodiscard]] vec<TYPE, 2u>& vec<TYPE, 2u>::operator+=(E0 _other)
 	{

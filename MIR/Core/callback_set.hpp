@@ -42,7 +42,7 @@ namespace mir
 	{
 		for( callback_type& callback : m_callbacks )
 		{
-			callback( _args );
+			callback( _args... );
 		}
 	}
 

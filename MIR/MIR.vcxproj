@@ -66,7 +66,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <AdditionalLibraryDirectories>$(VULKAN_SDK)\Lib;$(SolutionDir)\MIR\Libraries\glfw-3.3.8.bin.WIN64\lib-vc2017;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>vulkan-1.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>vulkan-1.lib;glfw3.lib;d3d12.lib;dxgi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -116,9 +116,11 @@
     <ClInclude Include="Core\singleton.h" />
     <ClInclude Include="Display\DX12\dx12_pch.h" />
     <ClInclude Include="Display\DX12\dx12_render_device.h" />
+    <ClInclude Include="Display\glfw\glfw_window.h" />
     <ClInclude Include="Display\glfw\glfw_windowing_system.h" />
     <ClInclude Include="Display\rendering_system.h" />
     <ClInclude Include="Display\render_device.h" />
+    <ClInclude Include="Display\window.h" />
     <ClInclude Include="Display\windowing_system.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -129,9 +131,11 @@
     <ClCompile Include="Core\Math\matrix3x4f.cpp" />
     <ClCompile Include="Core\Math\quaternion.hpp" />
     <ClCompile Include="Display\DX12\dx12_render_device.cpp" />
+    <ClCompile Include="Display\glfw\glfw_window.cpp" />
     <ClCompile Include="Display\glfw\glfw_windowing_system.cpp" />
     <ClCompile Include="Display\rendering_system.cpp" />
     <ClCompile Include="Display\render_device.cpp" />
+    <ClCompile Include="Display\window.cpp" />
     <ClCompile Include="Display\windowing_system.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

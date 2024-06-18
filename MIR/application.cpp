@@ -28,20 +28,29 @@ namespace mir
 		//windowing_system::instance().cleanup();
 	}
 
+	void on_window_dimensions_changed( vec2u _dims )
+	{
+		MIR_LOG( "Window dimensions : ( " << _dims[0] << ", " << _dims[1] << ")" );
+	}
+
 	int application::run()
 	{
+		callback_set<vec2u> on_framebuffer_resize;
+
 		//windowing_system& ws = windowing_system::instance();
 
 		window* window = window_factory::s_create_window(vec2u(640, 480));
+
+		window->get_on_resize_event() += on_window_dimensions_changed;
 
 		//glm::mat4 matrix;
 		//glm::vec4 vec;
 		//auto test = matrix * vec;
 
-		//while(ws.is_open()) 
-		//{
-		//	ws.poll_events();
-		//}
+		while(window->is_open()) 
+		{
+			window->poll_events();
+		}
 		return 0;
 	}
 }
