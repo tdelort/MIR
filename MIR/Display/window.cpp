@@ -1,10 +1,10 @@
 #pragma once
 
-#include "windowing_system.h"
+#include "windowing_service.h"
 #include "Core/callback_set.h"
 
 #if defined( MIR_WINDOW_USE_GLFW )
-#include <Display/glfw/glfw_windowing_system.h>
+#include <Display/glfw/glfw_windowing_service.h>
 #endif // defined( MIR_WINDOW_USE_GLFW )
 
 

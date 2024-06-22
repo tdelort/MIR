@@ -1,6 +1,7 @@
 #ifndef CORE_CALLBACK_SET_H_INCLUDED
 #define CORE_CALLBACK_SET_H_INCLUDED
 
+#include "Core/core.h"
 #include <functional>
 
 namespace mir

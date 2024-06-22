@@ -1,31 +1,35 @@
 #include "application.h"
 
-#include "Display/windowing_system.h"
-//#include "Core/windowing_system.h"
-//#include "Core/rendering_system.h"
+#include "Display/windowing_service.h"
+#include "Display/glfw/glfw_windowing_service.h"
 
 namespace mir
 {
-	application::application()
+	application::application() {}
+
+	void application::init( const application_config& _config )
 	{
-		window_factory::s_initialize_window_system();
-		//windowing_system::instance().init();
-
-		//rendering_system::instance().init( windowing_system::instance().get_window_handle() );
-
-		//uint32_t extensionCount = 0;
-		//vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
-
-		//std::cout << extensionCount << " extensions supported\n";
-
+		switch (_config.m_windowing_service_choice)
+		{
+			case application_config::windowing_service_type::glfw:
+				m_application_services.initialize<glfw_windowing_service>();
+				break;
+			default:
+			{
+				MIR_LOG_ERROR("Windowing service backend not set in application_config");
+				return;
+			}
+		}
 	}
 
-	application::~application()
+	void application::destroy()
 	{
-		window_factory::s_terminate_window_system();
-		//rendering_system::instance().cleanup();
+		m_application_services.destroy<windowing_service>();
+	}
 
-		//windowing_system::instance().cleanup();
+	const service_locator& application::get_service_locator()
+	{
+		return m_application_services;
 	}
 
 	void on_window_dimensions_changed( vec2u _dims )
@@ -35,17 +39,11 @@ namespace mir
 
 	int application::run()
 	{
-		callback_set<vec2u> on_framebuffer_resize;
+		//windowing_service& ws = windowing_service::instance();
 
-		//windowing_system& ws = windowing_system::instance();
-
-		window* window = window_factory::s_create_window(vec2u(640, 480));
+		window* window = get_windowing_service().create_window( vec2u(640, 480) );
 
 		window->get_on_resize_event() += on_window_dimensions_changed;
-
-		//glm::mat4 matrix;
-		//glm::vec4 vec;
-		//auto test = matrix * vec;
 
 		while(window->is_open()) 
 		{

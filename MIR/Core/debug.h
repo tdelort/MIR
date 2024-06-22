@@ -31,7 +31,14 @@ namespace mir
 #define MIR_PRETTY_FUNCTION __FUNCTION__
 
 
-#define MIR_ASSERT(_test, _msg) MIR_MAKE_STMT(debug::assert_if( (_test), (_msg), __FILE__, MIR_PRETTY_FUNCTION, __LINE__);)
+#define MIR_ASSERT_INTERNAL( _test, _msg )		\
+{												\
+	std::stringstream MIR_ASSERT_INTERNAL__ss;	\
+	MIR_LOG_INTERNAL__ss << _msg;				\
+	debug::assert_if( ( _test ), MIR_LOG_INTERNAL__ss.str(), __FILE__, MIR_PRETTY_FUNCTION, __LINE__ ); \
+}
+
+#define MIR_ASSERT(_test, _msg) MIR_ASSERT_INTERNAL( _test, _msg );
 
 #define MIR_LOG_INTERNAL( _level, _msg )	\
 {											\

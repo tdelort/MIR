@@ -51,14 +51,14 @@ namespace mir
     template<typename TYPE>
 	[[nodiscard]] TYPE vec<TYPE, 3u>::operator[]( size_t _index ) const
 	{
-		// TODO : Debug assert
+		MIR_ASSERT(_index < 3u, "vec3 out of bound acces (_index = " << _index << ")" );
 		return m_data[_index];
 	}
 
     template<typename TYPE>
 	TYPE& vec<TYPE, 3u>::operator[]( size_t _index )
 	{
-		// TODO : Debug assert
+		MIR_ASSERT(_index < 3u, "vec3 out of bound acces (_index = " << _index << ")" );
 		return m_data[_index];
 	}
 

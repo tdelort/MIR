@@ -1,5 +1,5 @@
-#include "rendering_system.h"
-#include "render_device.h"
+#include "todo_vulkan_rendering_service.h"
+#include "todo_vulkan_render_device.h"
 
 
 // TODO : move most of rendering system in a vulkan system and abstract it here (to later support different systems)
@@ -38,13 +38,13 @@ namespace mir
 	}
 #endif // MIR_RENDER_USE_VALIDATION_LAYER
 
-	rendering_system::rendering_system()
+	todo_vulkan_rendering_service::todo_vulkan_rendering_service()
 		: m_instance{}
 	{
 
 	}
 
-	void rendering_system::init( GLFWwindow* _window )
+	void todo_vulkan_rendering_service::init( GLFWwindow* _window )
 	{
 		create_instance();
 #if defined(MIR_RENDER_USE_VALIDATION_LAYERS)
@@ -55,12 +55,12 @@ namespace mir
 		VkResult res = glfwCreateWindowSurface(m_instance, _window, nullptr, &m_surface);
 		MIR_ASSERT(res == VK_SUCCESS, "failed to create window surface!");
 
-		m_device = render_device_factory::create_render_device( m_surface );
+		m_device = todo_vulkan_render_device_factory::create_todo_vulkan_render_device( m_surface );
 	}
 
-	void rendering_system::cleanup()
+	void todo_vulkan_rendering_service::cleanup()
 	{
-		render_device_factory::release_render_device(m_device);
+		todo_vulkan_render_device_factory::release_todo_vulkan_render_device(m_device);
 #if defined(MIR_RENDER_USE_VALIDATION_LAYERS)
 		destroy_debug_messenger();
 #endif // MIR_RENDER_USE_VALIDATION_LAYERS
@@ -68,7 +68,7 @@ namespace mir
 		destroy_instance();
 	}
 
-	void rendering_system::create_instance()
+	void todo_vulkan_rendering_service::create_instance()
 	{
 #if defined(MIR_RENDER_USE_VALIDATION_LAYERS)
 		MIR_ASSERT(check_validation_layer_support(), "Could not load all validation layers selected");
@@ -108,15 +108,15 @@ namespace mir
 		MIR_ASSERT(res == VK_SUCCESS, "Could not create vulkan instance");
 	}
 
-	void rendering_system::destroy_instance()
+	void todo_vulkan_rendering_service::destroy_instance()
 	{
 		vkDestroyInstance(m_instance, nullptr);
 	}
 
 
-	std::vector<const char*> rendering_system::list_required_extensions()
+	std::vector<const char*> todo_vulkan_rendering_service::list_required_extensions()
 	{
-		// TODO put this into the windowing_system
+		// TODO put this into the windowing_service
 		uint32_t glfw_extension_count = 0u;
 		const char** glfw_extensions = glfwGetRequiredInstanceExtensions(&glfw_extension_count);
 
@@ -131,7 +131,7 @@ namespace mir
 
 
 #if defined(MIR_RENDER_USE_VALIDATION_LAYERS)
-	bool rendering_system::check_validation_layer_support()
+	bool todo_vulkan_rendering_service::check_validation_layer_support()
 	{
 		uint32_t layer_count;
 		vkEnumerateInstanceLayerProperties(&layer_count, nullptr);
@@ -177,7 +177,7 @@ namespace mir
 			func(instance, pDebugMessenger, pAllocator);
 	}
 
-	void rendering_system::create_debug_messenger()
+	void todo_vulkan_rendering_service::create_debug_messenger()
 	{
 		VkDebugUtilsMessengerCreateInfoEXT create_info{};
 		create_info.sType = VK_STRUCTURE_TYPE_DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT;
@@ -190,7 +190,7 @@ namespace mir
 		MIR_ASSERT(res == VK_SUCCESS, "Could not set the debug callback for the validation layers");
 	}
 
-	void rendering_system::destroy_debug_messenger()
+	void todo_vulkan_rendering_service::destroy_debug_messenger()
 	{
 		destroy_debug_utils_messenger_ext(m_instance, m_debug_messenger, nullptr);
 	}

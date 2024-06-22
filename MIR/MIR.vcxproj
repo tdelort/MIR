@@ -95,6 +95,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="application.h" />
+    <ClInclude Include="application_config.h" />
     <ClInclude Include="Core\basic_allocator.h" />
     <ClInclude Include="Core\core.h" />
     <ClInclude Include="Core\debug.h" />
@@ -113,30 +114,38 @@
     <ClInclude Include="Core\Math\vec_operations.h" />
     <ClInclude Include="Core\Math\vec_operations_scalar.hpp" />
     <ClInclude Include="Core\Math\vec_swizzle.h" />
+    <ClInclude Include="Core\service.h" />
+    <ClInclude Include="Core\service_locator.h" />
+    <ClInclude Include="Core\service_locator.hpp" />
     <ClInclude Include="Core\singleton.h" />
     <ClInclude Include="Display\DX12\dx12_pch.h" />
+    <ClInclude Include="Display\DX12\dx12_rendering_service.h" />
     <ClInclude Include="Display\DX12\dx12_render_device.h" />
     <ClInclude Include="Display\glfw\glfw_window.h" />
-    <ClInclude Include="Display\glfw\glfw_windowing_system.h" />
-    <ClInclude Include="Display\rendering_system.h" />
+    <ClInclude Include="Display\glfw\glfw_windowing_service.h" />
+    <ClInclude Include="Display\rendering_service.h" />
     <ClInclude Include="Display\render_device.h" />
+    <ClInclude Include="Display\Vulkan\todo_vulkan_rendering_service.h" />
+    <ClInclude Include="Display\Vulkan\todo_vulkan_render_device.h" />
     <ClInclude Include="Display\window.h" />
-    <ClInclude Include="Display\windowing_system.h" />
+    <ClInclude Include="Display\windowing_service.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application.cpp" />
+    <ClCompile Include="application_config.cpp" />
     <ClCompile Include="Core\basic_allocator.cpp" />
     <ClCompile Include="Core\debug.cpp" />
     <ClCompile Include="Core\Math\matrix3x4f.cpp" />
     <ClCompile Include="Core\Math\quaternion.hpp" />
+    <ClCompile Include="Display\DX12\dx12_rendering_service.cpp" />
     <ClCompile Include="Display\DX12\dx12_render_device.cpp" />
     <ClCompile Include="Display\glfw\glfw_window.cpp" />
-    <ClCompile Include="Display\glfw\glfw_windowing_system.cpp" />
-    <ClCompile Include="Display\rendering_system.cpp" />
+    <ClCompile Include="Display\glfw\glfw_windowing_service.cpp" />
     <ClCompile Include="Display\render_device.cpp" />
+    <ClCompile Include="Display\Vulkan\todo_vulkan_rendering_service.cpp" />
+    <ClCompile Include="Display\Vulkan\todo_vulkan_render_device.cpp" />
     <ClCompile Include="Display\window.cpp" />
-    <ClCompile Include="Display\windowing_system.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

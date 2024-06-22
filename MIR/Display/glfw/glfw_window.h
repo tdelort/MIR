@@ -1,8 +1,9 @@
-#ifndef DISPLAY_GLFW_GLFW_WINDOWING_SYSTEM_H_INCLUDED
-#define DISPLAY_GLFW_GLFW_WINDOWING_SYSTEM_H_INCLUDED
+#ifndef DISPLAY_GLFW_GLFW_WINDOW_H_INCLUDED
+#define DISPLAY_GLFW_GLFW_WINDOW_H_INCLUDED
 
 #include "Core/singleton.h"
-#include "Display/windowing_system.h"
+#include "Display/windowing_service.h"
+#include "Display/window.h"
 
 struct GLFWwindow;
 
@@ -26,4 +27,4 @@ namespace mir
 	};
 }
 
-#endif // DISPLAY_GLFW_GLFW_WINDOWING_SYSTEM_H_INCLUDED
+#endif // DISPLAY_GLFW_GLFW_WINDOW_H_INCLUDED

@@ -20,6 +20,9 @@
     <Filter Include="Display\glfw">
       <UniqueIdentifier>{740ee8bb-59b9-4279-ac44-a9fc72b30879}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Display\Vulkan">
+      <UniqueIdentifier>{c23bdd81-0f4b-4ad5-b113-7578fd800651}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Math\matrix3x4f.h">
@@ -75,13 +78,7 @@
     <ClInclude Include="Core\Math\vec_swizzle.h">
       <Filter>Core\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Display\render_device.h">
-      <Filter>Display</Filter>
-    </ClInclude>
-    <ClInclude Include="Display\rendering_system.h">
-      <Filter>Display</Filter>
-    </ClInclude>
-    <ClInclude Include="Display\windowing_system.h">
+    <ClInclude Include="Display\windowing_service.h">
       <Filter>Display</Filter>
     </ClInclude>
     <ClInclude Include="Core\callback_set.h">
@@ -93,7 +90,7 @@
     <ClInclude Include="Display\DX12\dx12_pch.h">
       <Filter>Display\DX12</Filter>
     </ClInclude>
-    <ClInclude Include="Display\glfw\glfw_windowing_system.h">
+    <ClInclude Include="Display\glfw\glfw_windowing_service.h">
       <Filter>Display\glfw</Filter>
     </ClInclude>
     <ClInclude Include="Display\DX12\dx12_render_device.h">
@@ -104,6 +101,31 @@
     </ClInclude>
     <ClInclude Include="Display\glfw\glfw_window.h">
       <Filter>Display\glfw</Filter>
+    </ClInclude>
+    <ClInclude Include="application_config.h" />
+    <ClInclude Include="Core\service_locator.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\service_locator.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\service.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\Vulkan\todo_vulkan_render_device.h">
+      <Filter>Display\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\Vulkan\todo_vulkan_rendering_service.h">
+      <Filter>Display\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\render_device.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\rendering_service.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\DX12\dx12_rendering_service.h">
+      <Filter>Display\DX12</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -120,16 +142,7 @@
     <ClCompile Include="Core\basic_allocator.cpp">
       <Filter>Core</Filter>
     </ClCompile>
-    <ClCompile Include="Display\render_device.cpp">
-      <Filter>Display</Filter>
-    </ClCompile>
-    <ClCompile Include="Display\rendering_system.cpp">
-      <Filter>Display</Filter>
-    </ClCompile>
-    <ClCompile Include="Display\windowing_system.cpp">
-      <Filter>Display</Filter>
-    </ClCompile>
-    <ClCompile Include="Display\glfw\glfw_windowing_system.cpp">
+    <ClCompile Include="Display\glfw\glfw_windowing_service.cpp">
       <Filter>Display\glfw</Filter>
     </ClCompile>
     <ClCompile Include="Display\DX12\dx12_render_device.cpp">
@@ -140,6 +153,19 @@
     </ClCompile>
     <ClCompile Include="Display\glfw\glfw_window.cpp">
       <Filter>Display\glfw</Filter>
+    </ClCompile>
+    <ClCompile Include="application_config.cpp" />
+    <ClCompile Include="Display\Vulkan\todo_vulkan_render_device.cpp">
+      <Filter>Display\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\Vulkan\todo_vulkan_rendering_service.cpp">
+      <Filter>Display\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\render_device.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\DX12\dx12_rendering_service.cpp">
+      <Filter>Display\DX12</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,7 +1,7 @@
 #ifndef DISPLAY_RENDERING_SYSTEM_H_INCLUDED
 #define DISPLAY_RENDERING_SYSTEM_H_INCLUDED
 
-#include <Display/render_device.h>
+#include <Display/todo_vulkan_render_device.h>
 
 #ifdef _DEBUG
 #define MIR_RENDER_USE_VALIDATION_LAYERS
@@ -9,20 +9,20 @@
 
 namespace mir
 {
-	class rendering_system
+	class todo_vulkan_rendering_service
 	{
 	private:
-		rendering_system();
+		todo_vulkan_rendering_service();
 
 	public:
-		rendering_system(const rendering_system&) = delete;
-		rendering_system(rendering_system&&) = delete;
-		rendering_system& operator=(const rendering_system&) = delete;
-		rendering_system& operator=(rendering_system&&) = delete;
+		todo_vulkan_rendering_service(const todo_vulkan_rendering_service&) = delete;
+		todo_vulkan_rendering_service(todo_vulkan_rendering_service&&) = delete;
+		todo_vulkan_rendering_service& operator=(const todo_vulkan_rendering_service&) = delete;
+		todo_vulkan_rendering_service& operator=(todo_vulkan_rendering_service&&) = delete;
 
 		static auto& instance()
 		{
-			static rendering_system instance;
+			static todo_vulkan_rendering_service instance;
 			return instance;
 		}
 
@@ -50,7 +50,7 @@ namespace mir
 		};
 #endif // MIR_RENDER_USE_VALIDATION_LAYERS
 		
-		render_device m_device;
+		todo_vulkan_render_device m_device;
 
 		VkInstance m_instance;
 		VkSurfaceKHR m_surface;

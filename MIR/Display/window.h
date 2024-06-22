@@ -1,7 +1,7 @@
-#ifndef DISPLAY_WINDOWING_SYSTEM_H_INCLUDED
-#define DISPLAY_WINDOWING_SYSTEM_H_INCLUDED
+#ifndef DISPLAY_WINDOW_H_INCLUDED
+#define DISPLAY_WINDOW_H_INCLUDED
 
-#include "Core/singleton.h"
+#include "Core/core.h"
 #include "Core/callback_set.h"
 #include "Core/Math/vec2.h"
 

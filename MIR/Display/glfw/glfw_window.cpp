@@ -1,18 +1,21 @@
-#include "glfw_windowing_system.h"
+#include "glfw_window.h"
+
+#include <application.h>
 
 namespace mir
 {
-	// TODO store in window factory
-	std::vector<glfw_window*> g_windows;
-
 	void glfw_window::s_glfw_on_frame_buffer_size_changed_callback(GLFWwindow* _window, int _w, int _h)
 	{
-		for ( glfw_window* window : g_windows )
+		windowing_service* sys = application::instance().get_service_locator().get<windowing_service>();
+
+		for (size_t i = 0; i < sys->get_window_count(); ++i )
 		{
-			// meh, not eleganto
-			if (_window == window->m_api_handle )
+			window* win = sys->get_window( i );
+			glfw_window* glfw_win = static_cast<glfw_window*>(win);
+
+			if (_window == glfw_win->m_api_handle )
 			{
-				window->get_on_resize_event().call( vec2u(_w, _h) );
+				glfw_win->get_on_resize_event().call( vec2u(_w, _h) );
 			}
 		}
 	}
