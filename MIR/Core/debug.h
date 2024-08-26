@@ -34,8 +34,8 @@ namespace mir
 #define MIR_ASSERT_INTERNAL( _test, _msg )		\
 {												\
 	std::stringstream MIR_ASSERT_INTERNAL__ss;	\
-	MIR_LOG_INTERNAL__ss << _msg;				\
-	debug::assert_if( ( _test ), MIR_LOG_INTERNAL__ss.str(), __FILE__, MIR_PRETTY_FUNCTION, __LINE__ ); \
+	MIR_ASSERT_INTERNAL__ss << _msg;				\
+	debug::assert_if( ( _test ), MIR_ASSERT_INTERNAL__ss.str(), __FILE__, MIR_PRETTY_FUNCTION, __LINE__ ); \
 }
 
 #define MIR_ASSERT(_test, _msg) MIR_ASSERT_INTERNAL( _test, _msg );

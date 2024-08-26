@@ -24,7 +24,7 @@ namespace mir
 
 	private:
 		std::unordered_map< std::type_index, std::unique_ptr<service_interface> > m_services;
-		std::mutex m_services_lock;
+		mutable std::mutex m_services_lock;
 	};
 }
 

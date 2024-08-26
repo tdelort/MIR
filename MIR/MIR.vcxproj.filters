@@ -23,6 +23,9 @@
     <Filter Include="Display\Vulkan">
       <UniqueIdentifier>{c23bdd81-0f4b-4ad5-b113-7578fd800651}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Core\Containers">
+      <UniqueIdentifier>{7b437735-10c5-47c0-a660-0f8c50ce2552}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\Math\matrix3x4f.h">
@@ -112,12 +115,6 @@
     <ClInclude Include="Core\service.h">
       <Filter>Core</Filter>
     </ClInclude>
-    <ClInclude Include="Display\Vulkan\todo_vulkan_render_device.h">
-      <Filter>Display\Vulkan</Filter>
-    </ClInclude>
-    <ClInclude Include="Display\Vulkan\todo_vulkan_rendering_service.h">
-      <Filter>Display\Vulkan</Filter>
-    </ClInclude>
     <ClInclude Include="Display\render_device.h">
       <Filter>Display</Filter>
     </ClInclude>
@@ -126,6 +123,33 @@
     </ClInclude>
     <ClInclude Include="Display\DX12\dx12_rendering_service.h">
       <Filter>Display\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\swap_chain.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\DX12\dx12_swap_chain.h">
+      <Filter>Display\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\command_buffer.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\DX12\dx12_command_buffer.h">
+      <Filter>Display\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\command_queue.h">
+      <Filter>Display</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\DX12\dx12_command_queue.h">
+      <Filter>Display\DX12</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Containers\span.h">
+      <Filter>Core\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Containers\span.hpp">
+      <Filter>Core\Containers</Filter>
+    </ClInclude>
+    <ClInclude Include="Display\rendering_thread.h">
+      <Filter>Display</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -155,16 +179,31 @@
       <Filter>Display\glfw</Filter>
     </ClCompile>
     <ClCompile Include="application_config.cpp" />
-    <ClCompile Include="Display\Vulkan\todo_vulkan_render_device.cpp">
-      <Filter>Display\Vulkan</Filter>
-    </ClCompile>
-    <ClCompile Include="Display\Vulkan\todo_vulkan_rendering_service.cpp">
-      <Filter>Display\Vulkan</Filter>
-    </ClCompile>
     <ClCompile Include="Display\render_device.cpp">
       <Filter>Display</Filter>
     </ClCompile>
     <ClCompile Include="Display\DX12\dx12_rendering_service.cpp">
+      <Filter>Display\DX12</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\rendering_service.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\swap_chain.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\DX12\dx12_swap_chain.cpp">
+      <Filter>Display\DX12</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\command_buffer.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\DX12\dx12_command_buffer.cpp">
+      <Filter>Display\DX12</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\command_queue.cpp">
+      <Filter>Display</Filter>
+    </ClCompile>
+    <ClCompile Include="Display\DX12\dx12_command_queue.cpp">
       <Filter>Display\DX12</Filter>
     </ClCompile>
   </ItemGroup>

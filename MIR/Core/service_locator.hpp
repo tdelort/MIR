@@ -42,7 +42,7 @@ namespace mir
 			const std::lock_guard<std::mutex> lock(m_services_lock);
 			const auto it = m_services.find(key);
 			MIR_ASSERT( it != m_services.end(), "Could not find the service");
-			found_service = (it->second).get();
+			found_service = static_cast<T*>( (it->second).get() );
 		}
 
 		return found_service;

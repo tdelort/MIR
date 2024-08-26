@@ -3,7 +3,7 @@
 
 namespace mir
 {
-	struct MIR_DLLEXPORT application_config
+	struct application_config
 	{
 		enum class windowing_service_type
 		{

@@ -2,8 +2,14 @@
 
 #include <application.h>
 
+#define GLFW_EXPOSE_NATIVE_WIN32
+//#define GLFW_EXPOSE_NATIVE_WGL
+#define GLFW_NATIVE_INCLUDE_NONE
+#include <GLFW/glfw3native.h>
+
 namespace mir
 {
+#if 0
 	void glfw_window::s_glfw_on_frame_buffer_size_changed_callback(GLFWwindow* _window, int _w, int _h)
 	{
 		windowing_service* sys = application::instance().get_service_locator().get<windowing_service>();
@@ -19,6 +25,7 @@ namespace mir
 			}
 		}
 	}
+#endif // 0
 
 	// Window
 	glfw_window::glfw_window( vec2u _size )
@@ -29,7 +36,13 @@ namespace mir
 		GLFWwindow* api_handle = glfwCreateWindow( _size[0], _size[1], "MIR window", nullptr, nullptr);
 		m_api_handle = api_handle;
 
-		glfwSetFramebufferSizeCallback( m_api_handle, s_glfw_on_frame_buffer_size_changed_callback );
+		//glfwSetFramebufferSizeCallback( m_api_handle, s_glfw_on_frame_buffer_size_changed_callback );
+
+		vec2i frame_buffer_size;
+		glfwGetFramebufferSize(m_api_handle, &frame_buffer_size[0], &frame_buffer_size[1]);
+
+		// TODO : improve vec
+		m_window_to_frame_buffer_size_ratio = vec2f( _size[0] == 0 ? 1.f : frame_buffer_size[0] / _size[0], _size[1] == 0 ? 1.f :frame_buffer_size[1] / _size[1]);
 	}
 
 	bool glfw_window::is_open() const
@@ -37,9 +50,28 @@ namespace mir
 		return !glfwWindowShouldClose( m_api_handle );
 	}
 
+	window::os_window_handle glfw_window::get_os_window_handle()
+	{
+#if defined( MIR_OS_WINDOWS )
+		return glfwGetWin32Window(m_api_handle);
+#endif // defined( MIR_OS_WINDOWS )
+	}
+
 	void glfw_window::poll_events()
 	{
 		glfwPollEvents();
+	}
+
+	vec2u glfw_window::get_size() const
+	{
+		int w, h;
+		glfwGetFramebufferSize(m_api_handle, &w, &h);
+		return vec2u(std::max(0, w), std::max(0, h));
+	}
+
+	void glfw_window::set_size(vec2u _size) &
+	{
+
 	}
 
 	glfw_window::~glfw_window()

@@ -2,47 +2,28 @@
 #define CORE_APPLICATION_H_INCLUDED
 
 
-// Configure backends
-
-// Window backend
-#define MIR_USE_GLFW
-
-// Rendering backend
-#define MIR_USE_DX12
-//#define MIR_USE_VULKAN
-
-
 #include "application_config.h"
 
 #include "Core/core.h"
-#include "Core/service_locator.h"
+
+#include <Display/rendering_service.h>
+#include <Display/windowing_service.h>
 
 namespace mir
 {
 	class MIR_DLLEXPORT application
 	{
-		application(const application&) = delete;
-		application(application&&) = delete;
-		application& operator=(const application&) = delete;
-		application& operator=(application&&) = delete;
-
 	public:
-		static auto& instance()
-		{
-			static application instance;
-			return instance;
-		}
-
-		application();
-
-		void init( const application_config& _config );
-		void destroy();
+		application( const application_config& _config );
+		~application();
 		int run();
 
-		const service_locator& get_service_locator();
+		const application_config& get_config() const;
 
 	private:
-		service_locator m_application_services;
+		std::unique_ptr<rendering_service> m_render_service;
+		std::unique_ptr<windowing_service> m_window_service;
+		application_config m_application_config;
 	};
 }
 

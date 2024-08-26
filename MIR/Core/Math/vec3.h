@@ -49,15 +49,20 @@ namespace mir
         TYPE& operator[](size_t _index);
 
 
-        template<typename E0>
-		[[nodiscard]] vec<TYPE, 3u>& operator+=(E0 _other);
-		template<typename E0>
-		[[nodiscard]] vec<TYPE, 3u>& operator+=(const vec<E0, 3u>& _other);
-
-        template<typename E0>
-		[[nodiscard]] vec<TYPE, 3u>& operator-=(E0 _other);
-		template<typename E0>
-		[[nodiscard]] vec<TYPE, 3u>& operator-=(const vec<E0, 3u>& _other);
+		template<typename E0>                                                   
+		[[nodiscard]] vec<TYPE, 3u>& operator+=(E0 _other);                     
+		template<typename E0>                                                   
+		[[nodiscard]] vec<TYPE, 3u>& operator+=(const vec<E0, 3u>& _other);     
+																				
+		template<typename E0>                                                   
+		[[nodiscard]] vec<TYPE, 3u>& operator-=(E0 _other);                     
+		template<typename E0>                                                   
+		[[nodiscard]] vec<TYPE, 3u>& operator-=(const vec<E0, 3u>& _other);     
+																				
+		template<typename E0>                                                   
+		[[nodiscard]] vec<TYPE, 3u>& operator/=(E0 _other);                     
+		template<typename E0>                                                   
+		[[nodiscard]] vec<TYPE, 3u>& operator/=(const vec<E0, 3u>& _other);
     };
 
     template<typename TYPE>

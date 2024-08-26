@@ -11,6 +11,7 @@ namespace mir
 {
 	class glfw_windowing_service : public service_generic<windowing_service>
 	{
+	public:
 		glfw_windowing_service();
 		virtual ~glfw_windowing_service() override;
 

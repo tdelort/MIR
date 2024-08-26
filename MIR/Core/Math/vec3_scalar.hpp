@@ -7,6 +7,18 @@
 
 namespace mir
 {
+	template<typename TYPE>
+	vec<TYPE, 3u>::vec()
+		: type{ 0 }
+	{
+	}
+
+	template<typename TYPE>
+	vec<TYPE, 3u>::vec(TYPE e)
+		: type{ e, e, e }
+	{
+	}
+
     template<typename TYPE>
 	vec<TYPE, 3u>::vec( TYPE _e0, TYPE _e1, TYPE _e2)
 		: m_data{ _e0, _e1, _e2 }
